@@ -1,0 +1,53 @@
+{
+  "overallScore": 78,
+  "complianceRequirements": [
+    {
+      "name": "KYC Verification Protocol",
+      "status": true
+    },
+    {
+      "name": "Customer Name Usage",
+      "status": true
+    },
+    {
+      "name": "Call documentation",
+      "status": true
+    }
+  ],
+  "bestPractices": [
+    {
+      "name": "KYC Verification Protocol",
+      "description": "Failed to verify customer identity according to protocol"
+    },
+    {
+      "name": "Retention strategies",
+      "description": "Failed to employ required retention techniques for redemption calls (draw chances, profit calculations)."
+    }
+  ],
+  "keyTriggerMoments": [
+    {
+      "category": "Retention",
+      "customerTrigger": "Can I transfer from 70 to [Trump Suku product]?",
+      "actualResponse": "Processed transfer request without timing consideration",
+      "optimalResponse": "Advise about upcoming profit distribution before transfer approval"
+    }
+  ],
+  "performanceCategories": [
+    {
+      "name": "identified strengths",
+      "expanded": true
+    },
+    {
+      "name": "suggested focus",
+      "expanded": false
+    },
+    {
+      "name": "emotional trends",
+      "expanded": false
+    },
+    {
+      "name": "communication style",
+      "expanded": false
+    }
+  ]
+}

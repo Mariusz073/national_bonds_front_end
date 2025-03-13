@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "overallScore": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Overall conversation score percentage"
+    },
+    "complianceRequirements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the compliance requirement"
+          },
+          "status": {
+            "type": "boolean",
+            "description": "Whether the requirement is met"
+          }
+        },
+        "required": ["name", "status"]
+      }
+    },
+    "bestPractices": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the best practice"
+          },
+          "description": {
+            "type": "string",
+            "description": "Detailed description of the missed opportunity"
+          }
+        },
+        "required": ["name", "description"]
+      }
+    },
+    "keyTriggerMoments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "description": "Category of the trigger moment"
+          },
+          "customerTrigger": {
+            "type": "string",
+            "description": "What the customer said or asked"
+          },
+          "actualResponse": {
+            "type": "string",
+            "description": "How the agent actually responded"
+          },
+          "optimalResponse": {
+            "type": "string",
+            "description": "The recommended response"
+          }
+        },
+        "required": [
+          "category",
+          "customerTrigger",
+          "actualResponse",
+          "optimalResponse"
+        ]
+      }
+    },
+    "performanceCategories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the performance category"
+          },
+          "expanded": {
+            "type": "boolean",
+            "description": "Whether the category details are expanded"
+          }
+        },
+        "required": ["name", "expanded"]
+      }
+    }
+  },
+  "required": [
+    "overallScore",
+    "complianceRequirements",
+    "bestPractices",
+    "keyTriggerMoments",
+    "performanceCategories"
+  ]
+}

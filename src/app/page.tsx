@@ -20,8 +20,9 @@ export default function Home() {
           />
         </div>
 
-        {/* Requirements and Strengths Row */}
+        {/* Requirements and Categories Row */}
         <div className="grid grid-cols-3 gap-6">
+          {/* Compliance Requirements */}
           <div className="bg-[#F5F5F5] p-6 rounded-lg">
             <RequirementsList
               title="Compliance requirement met"
@@ -29,6 +30,8 @@ export default function Home() {
               type="compliance"
             />
           </div>
+
+          {/* Best Practices */}
           <div className="bg-[#F5F5F5] p-6 rounded-lg">
             <RequirementsList
               title="Best-practices missed"
@@ -36,20 +39,14 @@ export default function Home() {
               type="practices"
             />
           </div>
-          <div className="bg-[#F5F5F5] p-6 rounded-lg">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="font-architects-daughter text-lg">
-                Identified strengths
-              </h3>
-              <button className="text-amber-600 text-sm font-architects-daughter hover:underline">
-                view more
-              </button>
-            </div>
-            <p className="font-architects-daughter text-gray-600 text-sm leading-relaxed">
-              You demonstrate strong self-awareness and consistently show
-              dedication to personal growth, you will be successful in your
-              journey.
-            </p>
+
+          {/* Performance Categories */}
+          <div className="space-y-2">
+            {dashboardData.performanceCategories.map((category, index) => (
+              <div key={index} className="bg-[#F5F5F5] p-6 rounded-lg">
+                <CategoryList categories={[category]} />
+              </div>
+            ))}
           </div>
         </div>
 
@@ -76,17 +73,6 @@ export default function Home() {
               General session
             </button>
           </div>
-        </div>
-
-        {/* Other Categories */}
-        <div className="space-y-2">
-          {dashboardData.performanceCategories
-            .slice(1)
-            .map((category, index) => (
-              <div key={index} className="bg-[#F5F5F5] p-6 rounded-lg">
-                <CategoryList categories={[category]} />
-              </div>
-            ))}
         </div>
       </div>
     </Layout>

@@ -24,48 +24,45 @@ const CategoryList: React.FC<CategoryListProps> = ({
     );
   };
 
+  const getIcon = (name: string) => {
+    switch (name) {
+      case "identified strengths":
+        return "💪";
+      case "suggested focus":
+        return "🎯";
+      case "emotional trends":
+        return "📈";
+      case "communication style":
+        return "💬";
+      default:
+        return "•";
+    }
+  };
+
   return (
-    <div className="space-y-2">
+    <>
       {categories.map((category, index) => (
         <div
           key={index}
-          className="bg-gray-50 p-4 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors"
+          className="flex items-center justify-between cursor-pointer"
           onClick={() => toggleCategory(index)}
         >
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              {category.name === "identified strengths" && (
-                <span className="text-lg">💪</span>
-              )}
-              {category.name === "suggested focus" && (
-                <span className="text-lg">🎯</span>
-              )}
-              {category.name === "emotional trends" && (
-                <span className="text-lg">📈</span>
-              )}
-              {category.name === "communication style" && (
-                <span className="text-lg">💬</span>
-              )}
-              <span className="capitalize font-medium">{category.name}</span>
-            </div>
-            <span
-              className={`transform transition-transform ${
-                category.expanded ? "rotate-180" : ""
-              }`}
-            >
-              ▼
+          <div className="flex items-center gap-3">
+            <span className="text-xl">{getIcon(category.name)}</span>
+            <span className="font-architects-daughter text-gray-600">
+              {category.name}
             </span>
           </div>
-          {category.expanded && (
-            <div className="mt-4 pl-8">
-              <p className="text-gray-600">
-                Content for {category.name} (expandable section)
-              </p>
-            </div>
-          )}
+          <span
+            className={`transform transition-transform text-gray-400 ${
+              category.expanded ? "rotate-180" : ""
+            }`}
+          >
+            ▼
+          </span>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

@@ -9,18 +9,20 @@ interface ScoreCardProps {
 
 const ScoreCard: React.FC<ScoreCardProps> = ({ score, subtitle }) => {
   return (
-    <div className="bg-gray-50 p-6 rounded-lg">
-      <div className="flex justify-between items-center">
-        <div>
-          <h2 className="text-2xl font-bold text-amber-600">
-            Your overall conversation score:
-          </h2>
-          <p className="text-gray-600 text-sm mt-1">{subtitle}</p>
-        </div>
-        <div className="relative">
-          <div className="w-16 h-16 rounded-full border-4 border-amber-500 flex items-center justify-center">
-            <span className="text-xl font-bold text-amber-600">{score}%</span>
-          </div>
+    <div className="flex justify-between items-start">
+      <div className="flex-1">
+        <h2 className="text-2xl font-architects-daughter text-amber-600">
+          Your overall conversation score:
+        </h2>
+        <p className="text-sm font-architects-daughter text-gray-500 mt-1">
+          {subtitle}
+        </p>
+      </div>
+      <div className="relative">
+        <div className="w-14 h-14 rounded-full border-2 border-amber-600 flex items-center justify-center">
+          <span className="text-lg font-architects-daughter text-amber-600">
+            {score}%
+          </span>
         </div>
       </div>
     </div>
